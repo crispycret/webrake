@@ -1,2 +1,8 @@
+<<<<<<< HEAD
+=======
+build*
+dist*
+*.egg-info*
+>>>>>>> 1bf6fc50bc7ebce7bb89011fdf96608b9932ca15
 *.pyc
 */*.pyc
