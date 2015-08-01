@@ -1,10 +1,9 @@
 import unittest
 import requests
 
-from urls import LazyUrl
-from utils import LazyPath
 from scrapers import BaseScraper
 
+from crispys_webkit import LazyUrl, LazyPath
 
 
 
@@ -45,12 +44,12 @@ class BaseScraperTests(unittest.TestCase):
 		self.scraper.set_url('http://mangapark.me')
 		self.scraper.get()
 		
-		self.assertEqual(self.scraper.res_status_code(), 200)
+		self.assertEqual(self.scraper.last_status_code(), 200)
 		self.assertEqual(str(self.scraper.response.url), 'http://mangapark.me/')
 
 		lazy_path = LazyPath(self.scraper.url)
 
-		self.assertEqual(lazy_path.getfilename(), 'home.html')
+		# self.assertEqual(lazy_path.getfilename(), 'home.html')
 		# self.assertEqual(str(self.scraper.file_history[-1]))
 
 
